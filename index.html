@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation">
+  <meta name="keywords" content="Reinforcement Learning, Mobile Manipulation, Contact-rich Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation</title>
+
+  
+  <!-- Google Fonts. CSS Framework.  JavaScript Lib. -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/websitefig.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous authors
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Supplementary Materials PDF. -->
+              <span class="link-block">
+                <a href="./static/pdfs/supplement.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplement</span>
+                </a>
+              </span>              
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Paper Link. 中稿之后连接到IEEE官网-->
+              <!-- <span class="link-block">
+                <a href="https://IEEE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/QGARsArAA1U"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Cart manipulation is a challenging mobile manipulation task affected by uncertain friction, uneven payloads, and complex motion modes. Moreover, the end-effector-handle interactions exhibit diverse patterns, including spacing, sticking, and sliding, all of which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework integrates (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive simulations and real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 50% compared with evaluated baselines and achieves performance comparable to skilled human operators.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div style="text-align: center; margin-top: 20px;">
+          <img src="./static/images/method.png" 
+               style="max-width: 100%; height: auto;" 
+               alt="Method figure 3"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The proposed hierarchical framework couples a high-level RL reference correction strategy with low-level model-based controllers for bimanual cart manipulation. The RL policy (25Hz) takes the nominal cart trajectory and observations as inputs and outputs the EE perturbations as corrections. Then, the desired EE trajectories are updated by the perturbations. The two dashed boxes present the low-level control frameworks tracking the desired EE trajectories in task space. The floating EE controller (200Hz) supports parallel RL training in task space with real-time error feedback, while the whole-body tracker (50Hz) coordinates the upper-body and chassis motions and enables physical deployment. Their decoupled design allows the RL policy to focus on high-level reference correction, while the low-level controllers enforce kinematic and dynamic constraints and compensate for disturbances. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://youtu.be/QGARsArAA1U"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3 has-text-centered">Experiment Settings</h2>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Predefined Trajectories</h3>
+        <div style="text-align: center; margin-top: 20px;">
+          <img src="./static/images/predefined_traj.png"
+               style="max-width: 100%; height: auto;"
+               alt="Predefined nominal trajectories TrajA–TrajE"/>
+        </div>
+        <div class="content has-text-justified" style="margin-top: 1.25rem;">
+          <p>
+            We evaluate all methods on five predefined nominal trajectories. Specifically, TrajA–D are generated from trapezoidal profiles of the cart local velocities with <i>R</i><sub>min</sub> = 2&nbsp;m, while TrajE is a Lissajous-like trajectory with <i>R</i><sub>min</sub> = 0.5&nbsp;m, involving frequent heading changes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Scenario Settings</h3>
+        <div class="content">
+          <table class="table is-bordered is-striped is-fullwidth is-hoverable">
+            <thead>
+              <tr>
+                <th style="width: 20%;">Experiment</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Exp1</td><td>push along TrajA</td></tr>
+              <tr><td>Exp2</td><td>pull along TrajB</td></tr>
+              <tr><td>Exp3</td><td>push along TrajA with 20.6&nbsp;kg uneven payloads</td></tr>
+              <tr><td>Exp4</td><td>pull along TrajB with 20.6&nbsp;kg uneven payloads</td></tr>
+              <tr><td>Exp5</td><td>push along TrajA with random EE initial poses</td></tr>
+              <tr><td>Exp6</td><td>push along TrajA with random force disturbances</td></tr>
+              <tr><td>Exp7</td><td>push along TrajA with random ground roughness</td></tr>
+              <tr><td>Exp8</td><td>push along TrajC</td></tr>
+              <tr><td>Exp9</td><td>push along TrajD</td></tr>
+              <tr><td>Exp10</td><td>push along TrajC with 41.2&nbsp;kg payloads</td></tr>
+              <tr><td>Exp11</td><td>push along TrajE</td></tr>
+              <tr><td>Exp12</td><td>push along TrajE with 20.6&nbsp;kg uneven payloads</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Results of the Proposed Method</h2>
+    <h3 class="title is-4 has-text-centered">sim: IsaacLab</h3>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+      </div>
+    </div>
+
+    <h2 class="title is-4 has-text-centered">sim-to-sim: Gazebo</h2>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/gaz_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/gaz_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+      </div>
+    </div>
+
+    <h2 class="title is-4 has-text-centered">sim-to-real: Real-World</h2>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/1_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/2_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/3_trajb_rl_payload20.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp3</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/4_trajd_rl_payload20.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp4</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/5_trajb_rl_initialcp.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp5</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/6_trajb_rl_forcedis.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp6</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/7_trajb_rl_oldcarpet.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp7</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/8_traja_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp8</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/9_traje_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp9</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/10_traja_rl_payload40.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp10</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/11_trajs_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp11</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/12_trajs_rl_payload20.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp12</p>
+      </div>
+    </div>
+
+    <h3 class="title is-4 has-text-centered" style="margin-top: 2.5rem;">EE Generalization (sim: IsaacLab)</h3>
+    <p class="has-text-centered content" style="max-width: 52rem; margin: 0.75rem auto 1.5rem;">
+      Generalizability is further validated across various EE configurations.
+    </p>
+
+    <h4 class="title is-5 has-text-centered">Three-Finger Grippers</h4>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajb_rl_dex3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajd_rl_dex3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+      </div>
+    </div>
+
+    <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Ring-Shaped EEs</h4>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajb_rl_simple.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajd_rl_simple.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {A, B, C},
+  title     = {RL-Augmented Bimanual Mobile Manipulation for Cart Handling},
+  journal   = {},
+  year      = {},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website based on <a href="https://nerfies.github.io/">Nerfies</a>, under the <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
