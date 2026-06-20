@@ -125,6 +125,52 @@ body {
 .publication-body img {
 }
 
+/* Consistent vertical spacing between page blocks */
+.section > h2.title.is-3 {
+  margin-bottom: 1.75rem;
+}
+
+.page-block {
+  margin-top: 2.5rem;
+}
+
+.section > h2.title.is-3 + .page-block,
+.page-block:first-child {
+  margin-top: 0;
+}
+
+.page-block h3.title.is-4,
+.page-block h4.title.is-5 {
+  margin-bottom: 1rem;
+}
+
+.figure-media {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.block-caption {
+  margin-top: 1.25rem;
+}
+
+.major-section-title {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.subsection-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.major-section-title + .subsection-title {
+  margin-top: 0;
+}
+
+.video-result-row {
+  margin-bottom: 1.75rem;
+}
+
 .results-carousel {
   overflow: hidden;
 }

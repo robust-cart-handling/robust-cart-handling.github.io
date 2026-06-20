@@ -106,7 +106,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
@@ -119,15 +119,15 @@
     <!--/ Abstract. -->
 
     <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <div style="text-align: center; margin-top: 20px;">
+        <div class="figure-media">
           <img src="./static/images/method.png" 
                style="max-width: 100%; height: auto;" 
                alt="Method figure 3"/>
         </div>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified block-caption">
           <p>
             The proposed hierarchical framework couples a high-level RL reference correction strategy with low-level model-based controllers for bimanual cart manipulation. The RL policy (25Hz) takes the nominal cart trajectory and observations as inputs and outputs the EE perturbations as corrections. Then, the desired EE trajectories are updated by the perturbations. The two dashed boxes present the low-level control frameworks tracking the desired EE trajectories in task space. The floating EE controller (200Hz) supports parallel RL training in task space with real-time error feedback, while the whole-body tracker (50Hz) coordinates the upper-body and chassis motions and enables physical deployment. Their decoupled design allows the RL policy to focus on high-level reference correction, while the low-level controllers enforce kinematic and dynamic constraints and compensate for disturbances. 
           </p>
@@ -137,7 +137,7 @@
     <!--/ Method. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -160,15 +160,15 @@
 
     <h2 class="title is-3 has-text-centered">Experiment Settings</h2>
 
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Predefined Trajectories</h3>
-        <div style="text-align: center; margin-top: 20px;">
+        <div class="figure-media">
           <img src="./static/images/predefined_traj.png"
                style="max-width: 100%; height: auto;"
                alt="Predefined nominal trajectories TrajA–TrajE"/>
         </div>
-        <div class="content has-text-justified" style="margin-top: 1.25rem;">
+        <div class="content has-text-justified block-caption">
           <p>
             We evaluate all methods on five predefined nominal trajectories. Specifically, TrajA–D are generated from trapezoidal profiles of the cart local velocities with <i>R</i><sub>min</sub> = 2&nbsp;m, while TrajE is a Lissajous-like trajectory with <i>R</i><sub>min</sub> = 0.5&nbsp;m, involving frequent heading changes.
           </p>
@@ -176,7 +176,7 @@
       </div>
     </div>
 
-    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Scenario Settings</h3>
         <div class="content">
@@ -206,9 +206,29 @@
       </div>
     </div>
 
-    <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Results of the Proposed Method</h2>
-    <h3 class="title is-4 has-text-centered">sim: IsaacLab</h3>
-    <div class="columns is-centered">
+
+    <div class="columns is-centered has-text-centered page-block">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Experimental Results</h3>
+        <div class="figure-media">
+          <img src="./static/images/results.png"
+               style="max-width: 100%; height: auto;"
+               alt="Predefined nominal trajectories TrajA–TrajE"/>
+        </div>
+        <div class="content has-text-justified block-caption">
+          <p>
+            Heatmap of quantitative cart trajectory tracking errors across 12 simulation and real-world experimental cases. Mean absolute error (MAE), maximum error (MAX), and terminal pose error (Terminal) denote the average, peak, and arrival tracking error over the entire trajectory, respectively. Sample mean (μ) and sample standard deviation (s) are reported for each metric. The numerical value represents the specific error ([m] or [rad]), and the color indicates the relative error of each experiment, with darker colors corresponding to smaller errors. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <h2 class="title is-3 has-text-centered major-section-title">Results of the Proposed Method</h2>
+    <h3 class="title is-4 has-text-centered subsection-title">sim: IsaacLab</h3>
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/lab_trajb_rl.mp4" type="video/mp4">
@@ -223,8 +243,8 @@
       </div>
     </div>
 
-    <h2 class="title is-4 has-text-centered">sim-to-sim: Gazebo</h2>
-    <div class="columns is-centered">
+    <h2 class="title is-4 has-text-centered subsection-title">sim-to-sim: Gazebo</h2>
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gaz_trajb_rl.mp4" type="video/mp4">
@@ -239,8 +259,8 @@
       </div>
     </div>
 
-    <h2 class="title is-4 has-text-centered">sim-to-real: Real-World</h2>
-    <div class="columns is-centered">
+    <h2 class="title is-4 has-text-centered subsection-title">sim-to-real: Real-World</h2>
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/1_trajb_rl.mp4" type="video/mp4">
@@ -254,7 +274,7 @@
         <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
       </div>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/3_trajb_rl_payload20.mp4" type="video/mp4">
@@ -268,7 +288,7 @@
         <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp4</p>
       </div>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/5_trajb_rl_initialcp.mp4" type="video/mp4">
@@ -282,7 +302,7 @@
         <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp6</p>
       </div>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/7_trajb_rl_oldcarpet.mp4" type="video/mp4">
@@ -296,7 +316,7 @@
         <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp8</p>
       </div>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/9_traje_rl.mp4" type="video/mp4">
@@ -310,7 +330,7 @@
         <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp10</p>
       </div>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/11_trajs_rl.mp4" type="video/mp4">
@@ -325,13 +345,13 @@
       </div>
     </div>
 
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2.5rem;">EE Generalization (sim: IsaacLab)</h3>
-    <p class="has-text-centered content" style="max-width: 52rem; margin: 0.75rem auto 1.5rem;">
+    <h3 class="title is-4 has-text-centered subsection-title">EE Generalization (sim: IsaacLab)</h3>
+    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
       Generalizability is further validated across various EE configurations.
     </p>
 
-    <h4 class="title is-5 has-text-centered">Three-Finger Grippers</h4>
-    <div class="columns is-centered">
+    <h4 class="title is-5 has-text-centered subsection-title">Three-Finger Grippers</h4>
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/lab_trajb_rl_dex3.mp4" type="video/mp4">
@@ -346,8 +366,8 @@
       </div>
     </div>
 
-    <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Ring-Shaped EEs</h4>
-    <div class="columns is-centered">
+    <h4 class="title is-5 has-text-centered subsection-title">Ring-Shaped EEs</h4>
+    <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/lab_trajb_rl_simple.mp4" type="video/mp4">
