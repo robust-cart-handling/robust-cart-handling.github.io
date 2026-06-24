@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation">
+        content="Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators">
   <meta name="keywords" content="Reinforcement Learning, Mobile Manipulation, Contact-rich Manipulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation</title>
+  <title>Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators</title>
 
   
   <!-- Google Fonts. CSS Framework.  JavaScript Lib. -->
@@ -34,7 +34,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation</h1>
+          <h1 class="title is-1 publication-title">Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators</h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -111,7 +111,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Cart manipulation is a challenging mobile manipulation task affected by uncertain friction, uneven payloads, and complex motion modes. Moreover, the end-effector-handle interactions exhibit diverse patterns, including spacing, sticking, and sliding, all of which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework integrates (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive simulations and real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 50% compared with evaluated baselines and achieves performance comparable to skilled human operators.
+            Cart handling is a challenging mobile manipulation task affected by uncertain friction, uneven payloads, and complex motion modes. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework integrates (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive simulations and real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 50% compared with evaluated baselines and achieves performance comparable to skilled human operators.
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/QGARsArAA1U"
-                  title="Task-Space RL Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulation"
+                  title="Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
@@ -170,7 +170,7 @@
         </div>
         <div class="content has-text-justified block-caption">
           <p>
-            We evaluate all methods on five predefined nominal trajectories. Specifically, TrajA–D are generated from trapezoidal profiles of the cart local velocities with <i>R</i><sub>min</sub> = 2&nbsp;m, while TrajE is a Lissajous-like trajectory with <i>R</i><sub>min</sub> = 0.5&nbsp;m, involving frequent heading changes.
+            We evaluate all methods on five predefined nominal trajectories. Specifically, TrajA--D are generated from trapezoidal velocity profiles with three graded velocity levels in the cart local frame with <i>R</i><sub>min</sub> = 2&nbsp;m, while TrajE is a Lissajous-like trajectory with <i>R</i><sub>min</sub> = 0.5&nbsp;m, involving frequent heading changes.
           </p>
         </div>
       </div>
@@ -217,7 +217,7 @@
         </div>
         <div class="content has-text-justified block-caption">
           <p>
-            Heatmap of quantitative cart trajectory tracking errors across 12 simulation and real-world experimental cases. Mean absolute error (MAE), maximum error (MAX), and terminal pose error (Terminal) denote the average, peak, and arrival tracking error over the entire trajectory, respectively. Sample mean (μ) and sample standard deviation (s) are reported for each metric. The numerical value represents the specific error ([m] or [rad]), and the color indicates the relative error of each experiment, with darker colors corresponding to smaller errors. 
+            Heatmap of quantitative cart trajectory tracking errors across 12 simulation and real-world experimental cases. Mean absolute error (MAE), maximum error (MAX), and terminal pose error (Terminal) denote the average, peak, and arrival tracking error over the entire trajectory, respectively. Sample mean (μ) and sample standard deviation (s) are reported for each metric. The numerical value represents the specific error ([m] or [rad]), and the color indicates the tracking performance of each experiment, with darker colors corresponding to better performance. 
           </p>
         </div>
       </div>
