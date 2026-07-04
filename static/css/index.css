@@ -167,6 +167,25 @@ body {
   margin-top: 0;
 }
 
+/* Results section: three title tiers + video labels */
+.result-tier-1.title {
+  font-size: 1.5rem !important;
+}
+
+.result-tier-2.title {
+  font-size: 1.25rem !important;
+}
+
+.result-tier-3.title {
+  font-size: 1.1rem !important;
+}
+
+.video-exp-label {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .video-result-row {
   margin-bottom: 1.75rem;
 }

@@ -76,7 +76,7 @@
               </span> -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/NLBNPcP7nMU"
+                <a href="https://youtu.be/kNk8F_hPaHs"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -137,11 +137,11 @@
     <!--/ Method. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered page-block">
+    <!-- <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/NLBNPcP7nMU"
+          <iframe src="https://www.youtube.com/embed/"
                   title="Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -149,7 +149,7 @@
                   allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
@@ -227,51 +227,163 @@
 
 
     <h2 class="title is-3 has-text-centered major-section-title">Results of the Proposed Method</h2>
-    <h3 class="title is-4 has-text-centered subsection-title">sim: IsaacLab</h3>
+    <h3 class="title is-4 has-text-centered subsection-title result-tier-1">sim: IsaacLab</h3>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/lab_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/lab_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2</p>
       </div>
     </div>
 
-    <h2 class="title is-4 has-text-centered subsection-title">sim-to-sim: Gazebo</h2>
+    <h4 class="title is-5 has-text-centered subsection-title result-tier-2">EE Generalization</h4>
+    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
+      Generalizability across diverse EE configurations in IsaacLab.
+    </p>
+
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Three-Finger Gripper</h5>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajb_rl_dex3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajd_rl_dex3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp2</p>
+      </div>
+    </div>
+
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Ring-Shaped EE</h5>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajb_rl_simple.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/lab_trajd_rl_simple.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp2</p>
+      </div>
+    </div>
+  
+
+
+    <h4 class="title is-5 has-text-centered subsection-title result-tier-2">Cart Generalization</h4>
+    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
+      Zero-shot generalization across diverse wheeled platforms in IsaacLab.
+    </p>
+
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flat cart</h5>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/flat_lab_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/flat_lab_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp2</p>
+      </div>
+    </div>
+
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Medical gurney</h5>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/gurney_lab_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/gurney_lab_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp2</p>
+      </div>
+    </div>    
+
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Manual wheelchair</h5>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/wheelchair_lab_trajb_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/wheelchair_lab_trajd_rl.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp2</p>
+      </div>
+    </div>    
+
+    <h4 class="title is-5 has-text-centered subsection-title result-tier-2">SimpleRL Baseline</h4>
+    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
+      SimpleRL is a floating EE control strategy commonly adopted in existing RL-based manipulation approaches, where wrist wrenches are used as control actions. However, it exhibits significant tracking errors when deployed zero-shot on larger and heavier unseen objects.
+    </p>
+    <div class="columns is-centered video-result-row">
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/gurney_lab_trajb_simpleRL.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+      <div class="column is-5">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/wheelchair_lab_trajb_simpleRL.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered video-exp-label">Exp1</p>
+      </div>
+    </div>    
+
+
+    <h3 class="title is-4 has-text-centered subsection-title result-tier-1">sim-to-sim: Gazebo</h3>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gaz_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gaz_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2</p>
       </div>
     </div>
 
-    <h2 class="title is-4 has-text-centered subsection-title">sim-to-real: Real-World</h2>
+    <h3 class="title is-4 has-text-centered subsection-title result-tier-1">sim-to-real: Real-World</h3>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/1_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/2_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2</p>
       </div>
     </div>
     <div class="columns is-centered video-result-row">
@@ -279,13 +391,13 @@
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/3_trajb_rl_payload20.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp3</p>
+        <p class="has-text-centered video-exp-label">Exp3</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/4_trajd_rl_payload20.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp4</p>
+        <p class="has-text-centered video-exp-label">Exp4</p>
       </div>
     </div>
     <div class="columns is-centered video-result-row">
@@ -293,13 +405,13 @@
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/5_trajb_rl_initialcp.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp5</p>
+        <p class="has-text-centered video-exp-label">Exp5</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/6_trajb_rl_forcedis.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp6</p>
+        <p class="has-text-centered video-exp-label">Exp6</p>
       </div>
     </div>
     <div class="columns is-centered video-result-row">
@@ -307,13 +419,13 @@
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/7_trajb_rl_oldcarpet.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp7</p>
+        <p class="has-text-centered video-exp-label">Exp7</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/8_traja_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp8</p>
+        <p class="has-text-centered video-exp-label">Exp8</p>
       </div>
     </div>
     <div class="columns is-centered video-result-row">
@@ -321,13 +433,13 @@
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/9_traje_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp9</p>
+        <p class="has-text-centered video-exp-label">Exp9</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/10_traja_rl_payload40.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp10</p>
+        <p class="has-text-centered video-exp-label">Exp10</p>
       </div>
     </div>
     <div class="columns is-centered video-result-row">
@@ -335,52 +447,16 @@
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/11_trajs_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp11</p>
+        <p class="has-text-centered video-exp-label">Exp11</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/12_trajs_rl_payload20.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp12</p>
+        <p class="has-text-centered video-exp-label">Exp12</p>
       </div>
-    </div>
-
-    <h3 class="title is-4 has-text-centered subsection-title">EE Generalization</h3>
-    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
-      Generalizability is further validated across various EE configurations in IsaacLab.
-    </p>
-
-    <h4 class="title is-5 has-text-centered subsection-title">Three-Finger Grippers</h4>
-    <div class="columns is-centered video-result-row">
-      <div class="column is-5">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/lab_trajb_rl_dex3.mp4" type="video/mp4">
-        </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
-      </div>
-      <div class="column is-5">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/lab_trajd_rl_dex3.mp4" type="video/mp4">
-        </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
-      </div>
-    </div>
-
-    <h4 class="title is-5 has-text-centered subsection-title">Ring-Shaped EEs</h4>
-    <div class="columns is-centered video-result-row">
-      <div class="column is-5">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/lab_trajb_rl_simple.mp4" type="video/mp4">
-        </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp1</p>
-      </div>
-      <div class="column is-5">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/lab_trajd_rl_simple.mp4" type="video/mp4">
-        </video>
-        <p class="has-text-centered" style="margin-top: 0.75rem; font-size: 1.1rem; font-weight: 700;">Exp2</p>
-      </div>
-    </div>
+    </div>    
+  
   </div>
 
 </section>
