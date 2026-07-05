@@ -46,7 +46,7 @@
             <div class="publication-links">
               <!-- Supplementary Materials PDF. -->
               <span class="link-block">
-                <a href="./static/pdfs/supplement.pdf"
+                <a href="./static/pdfs/supplementary.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -76,7 +76,7 @@
               </span> -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/kNk8F_hPaHs"
+                <a href="https://youtu.be/Pp0Ipr2euiA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -113,6 +113,11 @@
           <p>
             Cart handling is a challenging mobile manipulation task affected by uncertain friction, uneven payloads, and complex motion modes. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework integrates (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 30% compared with evaluated baselines and achieves performance comparable to skilled human operators.
           </p>
+        </div>
+        <div class="figure-media">
+          <img src="./static/images/generalization.png" 
+               style="max-width: 100%; height: auto;" 
+               alt="Framework Ability Introduction"/>
         </div>
       </div>
     </div>
@@ -287,7 +292,7 @@
       Zero-shot generalization across diverse wheeled platforms in IsaacLab.
     </p>
 
-    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flat cart</h5>
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flatbed cart</h5>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
