@@ -1,3 +1,7 @@
+html {
+  zoom: 1.25;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -163,6 +167,27 @@ body {
   margin-bottom: 1rem;
 }
 
+.subsection-title:has(+ .columns .block-caption),
+.subsection-title:has(+ .content.block-caption),
+.subsection-title:has(+ p.block-caption) {
+  margin-bottom: 0.35rem;
+}
+
+.subsection-title + .columns .block-caption,
+.subsection-title + .content.block-caption,
+.subsection-title + p.block-caption {
+  margin-top: 0;
+}
+
+.subsection-title + .columns {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.subsection-title + .columns > .column {
+  padding-top: 0;
+}
+
 .major-section-title + .subsection-title {
   margin-top: 0;
 }
@@ -188,6 +213,84 @@ body {
 
 .video-result-row {
   margin-bottom: 1.75rem;
+}
+
+.application-subtitle {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.application-desc {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.application-row {
+  margin-bottom: 0.5rem;
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+.application-row > .column {
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.application-media {
+  width: 100%;
+  line-height: 0;
+}
+
+.application-media img,
+.application-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.application-media img.zoomable-image {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+
+.image-lightbox.is-active {
+  display: flex;
+}
+
+.image-lightbox img {
+  max-width: min(95vw, 1400px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
 }
 
 .results-carousel {

@@ -76,7 +76,7 @@
               </span> -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/Pp0Ipr2euiA"
+                <a href="https://youtu.be/yH_XEkjlWCI"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -86,7 +86,7 @@
               </span>
               <!-- Code Link. -->
               <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -123,6 +123,70 @@
     </div>
     <!--/ Abstract. -->
 
+    <!-- Applications. -->
+    <div class="columns is-centered has-text-centered page-block">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Applications</h2>
+        <div class="content has-text-justified">
+          <p>
+            While robotic manipulation has achieved remarkable success with small objects, manipulating large and heavy objects remains a formidable challenge. Given the ubiquity of wheelchairs and trolleys in daily life, bimanual collaborative cart manipulation holds substantial practical value for healthcare, eldercare, and logistics.
+          </p>
+        </div>
+        <h3 class="title is-4 application-subtitle">Healthcare &amp; Eldercare</h3>
+        <p class="application-desc">Handling wheelchairs under nonholonomic constraints and heavy payloads.</p>
+        <div class="columns is-centered application-row">
+          <div class="column">
+            <div class="application-media">
+              <img src="./static/images/wheelchair_A.png"
+                   class="zoomable-image"
+                   alt="Wheelchair handling schematic"/>
+            </div>
+          </div>
+          <div class="column">
+            <div class="application-media">
+              <video autoplay controls muted loop playsinline>
+                <source src="./static/videos/wheelchair_A_1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="application-media">
+              <video autoplay controls muted loop playsinline>
+                <source src="./static/videos/wheelchair_B_1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-4 application-subtitle">Retail &amp; Logistics</h3>
+        <p class="application-desc">Handling shopping carts efficiently in confined retail environments.</p>
+        <div class="columns is-centered application-row">
+          <div class="column">
+            <div class="application-media">
+              <img src="./static/images/shoppingcart_A.png"
+                   class="zoomable-image"
+                   alt="Shopping cart handling schematic"/>
+            </div>
+          </div>
+          <div class="column">
+            <div class="application-media">
+              <video autoplay controls muted loop playsinline>
+                <source src="./static/videos/shoppingcart_A_1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="application-media">
+              <video autoplay controls muted loop playsinline>
+                <source src="./static/videos/shoppingcart_B_1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Applications. -->
+
     <!-- Method. -->
     <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
@@ -142,11 +206,11 @@
     <!--/ Method. -->
 
     <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered page-block">
+    <div class="columns is-centered has-text-centered page-block">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/"
+          <iframe src="https://www.youtube.com/embed/yH_XEkjlWCI"
                   title="Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -154,7 +218,7 @@
                   allowfullscreen></iframe>
         </div>
       </div>
-    </div> -->
+    </div>
     <!--/ Paper video. -->
   </div>
 </section>
@@ -292,70 +356,76 @@
       Zero-shot generalization across diverse wheeled platforms in IsaacLab.
     </p>
 
-    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flatbed cart</h5>
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flatbed Cart</h5>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/flat_lab_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1 (zero-shot)</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/flat_lab_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2 (zero-shot)</p>
       </div>
     </div>
 
-    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Medical gurney</h5>
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Medical Gurney</h5>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gurney_lab_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1 (zero-shot)</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gurney_lab_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2 (zero-shot)</p>
       </div>
     </div>    
 
-    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Manual wheelchair</h5>
+    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Manual Wheelchair</h5>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/wheelchair_lab_trajb_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1 (zero-shot)</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/wheelchair_lab_trajd_rl.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp2</p>
+        <p class="has-text-centered video-exp-label">Exp2 (zero-shot)</p>
       </div>
     </div>    
 
     <h4 class="title is-5 has-text-centered subsection-title result-tier-2">SimpleRL Baseline</h4>
-    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
-      SimpleRL is a floating EE control strategy commonly adopted in existing RL-based manipulation approaches, where wrist wrenches are used as control actions. However, it exhibits significant tracking errors when deployed zero-shot on larger and heavier unseen objects.
-    </p>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified block-caption">
+          <p>
+            SimpleRL is a floating EE control strategy commonly adopted in existing RL-based manipulation approaches, where wrist wrenches are used as control actions. However, it exhibits significant tracking errors when deployed zero-shot on larger and heavier unseen objects.
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/gurney_lab_trajb_simpleRL.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1 (zero-shot)</p>
       </div>
       <div class="column is-5">
         <video autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/wheelchair_lab_trajb_simpleRL.mp4" type="video/mp4">
         </video>
-        <p class="has-text-centered video-exp-label">Exp1</p>
+        <p class="has-text-centered video-exp-label">Exp1 (zero-shot)</p>
       </div>
     </div>    
 

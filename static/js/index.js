@@ -75,4 +75,43 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    var lightbox = document.createElement('div');
+    lightbox.className = 'image-lightbox';
+    lightbox.innerHTML = '<img alt=""><button type="button" class="image-lightbox-close" aria-label="Close">&times;</button>';
+    document.body.appendChild(lightbox);
+
+    var lightboxImg = lightbox.querySelector('img');
+    var lightboxClose = lightbox.querySelector('.image-lightbox-close');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-active');
+      lightboxImg.removeAttribute('src');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.zoomable-image').forEach(function(img) {
+      img.addEventListener('click', function() {
+        openLightbox(img.src, img.alt);
+      });
+    });
+
+    lightbox.addEventListener('click', function(event) {
+      if (event.target === lightbox || event.target === lightboxClose) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
 })
