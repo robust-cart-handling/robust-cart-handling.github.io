@@ -76,7 +76,7 @@
               </span> -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/yH_XEkjlWCI"
+                <a href="https://youtu.be/jTN1qoDGOOk"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -111,7 +111,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Cart handling is a challenging mobile manipulation task affected by uncertain friction, uneven payloads, and complex motion modes. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework integrates (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 30% compared with the evaluated baselines and achieves performance comparable to skilled human operators.
+            Cart handling is a challenging mobile manipulation task affected by unknown friction, uncertain payloads, complex motion modes, and bimanual coordination. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework consists of (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive simulation and real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 30% compared with the evaluated baselines and achieves performance comparable to skilled human operators.
           </p>
         </div>
         <div class="figure-media">
@@ -129,7 +129,7 @@
         <h2 class="title is-3">Applications</h2>
         <div class="content has-text-justified">
           <p>
-            Robotic manipulation has achieved remarkable success with small objects, while manipulating large and heavy objects remains a formidable challenge. As wheeled platforms such as carts and wheelchairs are indispensable in daily life, the ability to manipulate them robustly is emerging as a key capability for service robots, with substantial practical value for logistics, healthcare, and eldercare.
+            Robotic manipulation has achieved remarkable success with small objects, while manipulating large and heavy objects remains a formidable challenge. As wheeled platforms such as carts and wheelchairs are indispensable and widely used in daily life, the ability to handle them robustly is emerging as a key capability for service robots, especially bimanual humanoid mobile manipulators.
           </p>
         </div>
         <h3 class="title is-4 application-subtitle">Healthcare &amp; Eldercare</h3>
@@ -210,7 +210,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/yH_XEkjlWCI"
+          <iframe src="https://www.youtube.com/embed/jTN1qoDGOOk"
                   title="Task-Space RL-Based Trajectory Correction for Robust Cart Handling with Bimanual Mobile Manipulators"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -259,16 +259,16 @@
             <tbody>
               <tr><td>Exp1</td><td>push along TrajA</td></tr>
               <tr><td>Exp2</td><td>pull along TrajB</td></tr>
-              <tr><td>Exp3</td><td>push along TrajA with 20.6&nbsp;kg uneven payloads</td></tr>
-              <tr><td>Exp4</td><td>pull along TrajB with 20.6&nbsp;kg uneven payloads</td></tr>
+              <tr><td>Exp3</td><td>push along TrajA with 20.6&nbsp;kg uncertain payloads</td></tr>
+              <tr><td>Exp4</td><td>pull along TrajB with 20.6&nbsp;kg uncertain payloads</td></tr>
               <tr><td>Exp5</td><td>push along TrajA with random EE initial poses</td></tr>
               <tr><td>Exp6</td><td>push along TrajA with random force disturbances</td></tr>
               <tr><td>Exp7</td><td>push along TrajA with random ground roughness</td></tr>
               <tr><td>Exp8</td><td>push along TrajC</td></tr>
               <tr><td>Exp9</td><td>push along TrajD</td></tr>
-              <tr><td>Exp10</td><td>push along TrajC with 41.2&nbsp;kg payloads</td></tr>
+              <tr><td>Exp10</td><td>push along TrajC with 41.2&nbsp;kg uncertain payloads</td></tr>
               <tr><td>Exp11</td><td>push along TrajE</td></tr>
-              <tr><td>Exp12</td><td>push along TrajE with 20.6&nbsp;kg uneven payloads</td></tr>
+              <tr><td>Exp12</td><td>push along TrajE with 20.6&nbsp;kg uncertain payloads</td></tr>
             </tbody>
           </table>
         </div>
