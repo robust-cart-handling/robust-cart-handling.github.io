@@ -101,6 +101,50 @@ body {
   display: inline-block;
 }
 
+.affiliation-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.25rem;
+  margin: 1.1rem auto 0.35rem;
+  flex-wrap: wrap;
+}
+
+.affiliation-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.affiliation-logo-zju {
+  height: 6.0rem;
+}
+
+.affiliation-logo-zjh {
+  height: 2.0rem;
+}
+
+.link-block a.button.is-dark,
+.publication-links a.button.is-dark {
+  color: #fff !important;
+}
+
+.link-block a.button.is-dark .icon,
+.publication-links a.button.is-dark .icon,
+.link-block a.button.is-dark .icon i,
+.publication-links a.button.is-dark .icon i {
+  color: #fff !important;
+}
+
+.link-block a.button.is-dark:hover,
+.publication-links a.button.is-dark:hover,
+.link-block a.button.is-dark:focus,
+.publication-links a.button.is-dark:focus,
+.link-block a.button.is-dark:visited,
+.publication-links a.button.is-dark:visited {
+  color: #fff !important;
+}
+
 .publication-banner img {
 }
 
