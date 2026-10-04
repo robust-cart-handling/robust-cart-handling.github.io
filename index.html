@@ -51,6 +51,7 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block"><sup>*</sup>Corresponding author.</span>
+          </div>
 
           <div class="affiliation-logos">
             <img src="./static/images/logo-zju.png" alt="Zhejiang University" class="affiliation-logo affiliation-logo-zju">
@@ -126,7 +127,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Cart handling is a challenging mobile manipulation task affected by unknown friction, uncertain payloads, complex motion modes, and bimanual coordination. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework consists of (i) a task-space floating EE controller for RL training and whole-body deployment, (ii) a piecewise random trajectory generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive simulation and real-world experiments demonstrate that the proposed method reduces cart trajectory tracking errors by nearly 30% compared with the evaluated baselines and achieves performance comparable to skilled human operators.
+            Cart handling is a challenging mobile manipulation task affected by unknown friction, uncertain payloads, complex motion modes, and bimanual coordination. Moreover, the end-effector-handle interactions feature diverse patterns, including spacing, sticking, and sliding, which are difficult to model. To address these challenges, we propose a task-space reinforcement learning (RL) framework that generates real-time corrections to nominal end-effector (EE) trajectories, thereby optimizing contact behavior and improving tracking performance without relying on precise dynamic models. Specifically, the framework consists of (i) a task-space floating-EE controller for RL training and whole-body deployment, (ii) a piecewise random velocity command generator that unifies pushing, pulling, and steering within a single policy, and (iii) a tailored curriculum learning and domain randomization scheme to enhance cross-scenario generalization. Extensive real-world experiments demonstrate that the proposed method reduces the cart position and orientation tracking errors by 30.4% and 36.3% on average, respectively, relative to the best evaluated baseline in each of the 12 real-world cases, and achieves tracking performance close to that of skilled human operators under uncertain cart payloads.
           </p>
         </div>
         <div class="figure-media">
@@ -207,13 +208,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
         <div class="figure-media">
-          <img src="./static/images/method.png" 
-               style="max-width: 100%; height: auto;" 
-               alt="Method figure 3"/>
+          <img src="./static/images/method.png"
+               class="zoomable-image"
+               style="max-width: 100%; height: auto;"
+               alt="Overview of the proposed task-space RL-based trajectory correction framework"/>
         </div>
         <div class="content has-text-justified block-caption">
           <p>
-            The proposed hierarchical framework couples a high-level RL trajectory correction strategy with low-level model-based controllers for bimanual cart manipulation. The RL policy (25Hz) takes the nominal cart trajectory and observations as inputs and outputs the EE perturbations as corrections. Then, the desired EE trajectories are updated by the perturbations and are tracked by two low-level controllers. The floating EE controller (200Hz) supports parallel RL training in task space with real-time feedback, while the whole-body tracker (50Hz) coordinates the upper-body and chassis motions for physical deployment. The system forms a cascaded two-loop structure: the outer RL loop generates corrections based on tracking feedback, while the inner loop executes the motion. This design allows the RL policy to focus on high-level trajectory correction, while the low-level controllers enforce kinodynamic constraints and compensate for disturbances.
+            The proposed hierarchical framework couples a high-level RL trajectory correction strategy with low-level model-based controllers for bimanual cart manipulation. The RL policy (25Hz) takes the nominal cart trajectory and observations as inputs and outputs the EE perturbations as corrections. Then, the desired EE trajectories are updated by the perturbations and are tracked by two low-level controllers. The floating-EE controller (200Hz) supports parallel RL training in task space with real-time feedback, while the whole-body tracker (50Hz) coordinates the upper-body and chassis motions for physical deployment. The system forms a cascaded two-loop structure: the outer RL loop generates corrections based on tracking feedback, while the inner loop executes the motion. This design allows the RL policy to focus on high-level trajectory correction, while the low-level controllers enforce kinodynamic constraints and compensate for disturbances.
           </p>
         </div>
       </div>
@@ -249,8 +251,9 @@
         <h3 class="title is-4">Predefined Trajectories</h3>
         <div class="figure-media">
           <img src="./static/images/predefined_traj.png"
+               class="zoomable-image"
                style="max-width: 100%; height: auto;"
-               alt="Predefined nominal trajectories TrajA–TrajE"/>
+               alt="Predefined cart nominal trajectories TrajA–TrajE"/>
         </div>
         <div class="content has-text-justified block-caption">
           <p>
@@ -296,8 +299,9 @@
         <h3 class="title is-4">Results</h3>
         <div class="figure-media">
           <img src="./static/images/results.png"
+               class="zoomable-image"
                style="max-width: 100%; height: auto;"
-               alt="Predefined nominal trajectories TrajA–TrajE"/>
+               alt="Heatmap of cart trajectory tracking errors across simulation and real-world cases"/>
         </div>
         <div class="content has-text-justified block-caption">
           <p>
@@ -328,9 +332,15 @@
     </div>
 
     <h4 class="title is-5 has-text-centered subsection-title result-tier-2">EE Generalization</h4>
-    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
-      Generalizability across diverse EE configurations in IsaacLab.
-    </p>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified block-caption">
+          <p>
+            Generalizability across diverse EE configurations in IsaacLab.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Three-Finger Gripper</h5>
     <div class="columns is-centered video-result-row">
@@ -367,9 +377,15 @@
 
 
     <h4 class="title is-5 has-text-centered subsection-title result-tier-2">Cart Generalization</h4>
-    <p class="has-text-centered content block-caption" style="max-width: 52rem; margin-left: auto; margin-right: auto;">
-      Zero-shot generalization across diverse wheeled platforms in IsaacLab.
-    </p>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified block-caption">
+          <p>
+            Zero-shot generalization across diverse wheeled platforms in IsaacLab.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <h5 class="title is-6 has-text-centered subsection-title result-tier-3">Flatbed Cart</h5>
     <div class="columns is-centered video-result-row">
@@ -419,20 +435,21 @@
       </div>
     </div>    
 
-    <h5 class="title is-6 has-text-centered subsection-title result-tier-3">SimpleRL Baseline</h5>
+    <h4 class="title is-5 has-text-centered subsection-title result-tier-2">SimpleRL Baseline</h4>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified block-caption">
           <p>
-            SimpleRL is a floating EE control strategy commonly adopted in existing RL-based manipulation approaches, where wrist wrenches are used as control actions. However, it exhibits significant tracking errors when deployed zero-shot on larger and heavier unseen objects.
+            SimpleRL is a floating-EE control strategy commonly adopted in existing RL-based manipulation approaches, where wrist wrenches are output as action. The wrench is applied in a zero-order hold manner within each simulation step, rather than the real-time error-feedback formulation used by our method. SimpleRL exhibits substantially larger tracking errors than our method when deployed zero-shot on larger and heavier unseen wheeled platforms. 
           </p>
         </div>
       </div>
     </div>
     <div class="figure-media">
       <img src="./static/images/simpleRLvsOurs.png"
+           class="zoomable-image"
            style="max-width: 100%; height: auto;"
-           alt="Predefined nominal trajectories TrajA–TrajE"/>
+           alt="Cart trajectory tracking comparison between SimpleRL and our method on unseen wheeled platforms"/>
     </div>
     <div class="columns is-centered video-result-row">
       <div class="column is-5">
@@ -556,29 +573,29 @@
 
 </section>
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {A, B, C},
-  title     = {RL-Augmented Bimanual Mobile Manipulation for Cart Handling},
-  journal   = {},
-  year      = {},
+    <pre><code>@article{tu2026cart,
+  author  = {Tu, Baining and Cui, Yuxiang and Yu, Hongxiang and Chen, Lu and Xiong, Rong},
+  title   = {Task-space RL-based trajectory correction for robust cart handling with bimanual mobile manipulators},
+  journal = {Science China Technological Sciences},
+  year    = {2026},
+  note    = {Under revision},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            Website based on <a href="https://nerfies.github.io/">Nerfies</a>, under the <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          Website based on <a href="https://nerfies.github.io/">Nerfies</a>, under the <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
       </div>
     </div>
   </div>
